@@ -4,23 +4,23 @@
 #include <stdlib.h>
 
 /**
- * struct s_linked_list - singly linked list
- * @i: integer
- * @n_node: points to the next node
+ * struct listint_s - singly linked list
+ * @n: integer
+ * @next: points to the next node
  *
  * Description: singly linked list node structure
  * for Holberton project
  */
-typedef struct s_linked_list
+typedef struct listint_s
 {
-	int i;
-	struct s_linked_list *n_node;
-} s_linked_list;
+	int n;
+	struct listint_s *next;
+} listint_t;
 
-size_t print_s_linked_list(const s_linked_list *h);
-s_linked_list *add_nodeint(s_linked_list **head, const int i);
-void free_s_linked_list(s_linked_list *head);
-int check_cycle(s_linked_list *list);
+size_t print_listint(const listint_t *h);
+listint_t *add_nodeint(listint_t **head, const int n);
+void free_listint(listint_t *head);
+int check_cycle(listint_t *list);
 
 #endif /* LISTS_H */
 
