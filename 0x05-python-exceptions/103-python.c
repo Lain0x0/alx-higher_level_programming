@@ -1,7 +1,21 @@
 #include <Python.h>
 
+/**
+ * print_python_list - Prints basic info about Python lists.
+ * @p: A PyObject list object.
+ */
 void print_python_list(PyObject *p);
+
+/**
+ * print_python_bytes - Prints basic info about Python byte objects.
+ * @p: A PyObject byte object.
+ */
 void print_python_bytes(PyObject *p);
+
+/**
+ * print_python_float - Prints basic info about Python float objects.
+ * @p: A PyObject float object.
+ */
 void print_python_float(PyObject *p);
 
 /**
@@ -62,8 +76,8 @@ void print_python_bytes(PyObject *p)
 	printf("  size: %ld\n", ((PyVarObject *)p)->ob_size);
 	printf("  trying string: %s\n", bytes->ob_sval);
 
-	size = (((PyVarObject *)p)->ob_size >= 10) ? 10 
-		: ((PyVarObject *)p)->ob_size + 1;
+	size = (((PyVarObject *)p)->ob_size >= 10) ? 10 :
+		((PyVarObject *)p)->ob_size + 1;
 
 	printf("  first %ld bytes: ", size);
 	for (i = 0; i < size; i++)
@@ -97,6 +111,7 @@ void print_python_float(PyObject *p)
 
 	buffer = PyOS_double_to_string(float_obj->ob_fval, 'r', 0,
 			Py_DTSF_ADD_DOT_0, NULL);
+
 	printf("  value: %s\n", buffer);
 	PyMem_Free(buffer);
 }
