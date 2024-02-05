@@ -15,7 +15,7 @@ def list_division(my_list_1, my_list_2, list_length):
             continue
         except TypeError:
             n_list.append(0)
-            print('wrogn type')
+            print('Wrogn type')
             continue
         finally:
             pass
