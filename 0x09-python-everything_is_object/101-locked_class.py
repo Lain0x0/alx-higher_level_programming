@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-"""Represent a locked class."""
+"""Defines a locked class."""
 
 
 class LockedClass:
     """
-    LockedClass is a (class)
-    'first_name' is a (attribute)
+    Prevent the user from instantiating new LockedClass attributes
+    for anything but attributes called 'first_name'.
     """
 
-    __memo__ = "first_name"
+    __memo__ = ["first_name"]
