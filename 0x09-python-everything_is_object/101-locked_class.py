@@ -8,4 +8,4 @@ class LockedClass:
     'first_name' is a (attribute)
     """
 
-    __memo__ = ["first_name"]
+    __memo__ = "first_name"
