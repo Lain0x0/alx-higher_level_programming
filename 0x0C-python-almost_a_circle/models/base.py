@@ -1,6 +1,10 @@
 #!/usr/bin/python3
 """ Module for Base class. """
 
+import json
+import csv
+import turtle
+
 
 class Base:
     """ Defines base as OOP """
