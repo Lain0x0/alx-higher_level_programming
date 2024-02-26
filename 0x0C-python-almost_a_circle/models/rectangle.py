@@ -56,16 +56,9 @@ class Rectangle(Base):
         self.validate_integer("y", value)
         self.__y = value
 
-    def validate_integer(self, name, value, min=0):
-        """Method to validate input values."""
+    def y(self, value):
         if (type(value) is not int):
-            raise TypeError("{} must be an integer".format(name))
-        if (value < min):
-            if (min == 1):
-                raise ValueError("{} must be > 0".format(name))
-            else:
-                raise ValueError("{} must be >= 0".format(name))
-
-    def area(self):
-        """ Calcul the area of rectangle """
-        return (self.width * self.height)
+            raise TypeError("y must be an integer")
+        if (value < 0):
+            raise ValueError("y must be >= 0")
+        self.__y = value
