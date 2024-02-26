@@ -1,16 +1,21 @@
 #!/usr/bin/python3
-""" Method for square class. """
+""" Module for square class ."""
+
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """ Class Square that inherits from Rectangle """
+    """ Class Rectangle """
 
     def __init__(self, size, x=0, y=0, id=None):
-        """ Constructor """
+        """ Initializes instances """
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
-        """ Return str info about square """
-        return '[{}] ({}) {}/{} - {}'.\
-            format(type(self).__name__, self.id, self.x, self.y, self.width)
+        """ string method """
+        str_square = "[Square] "
+        str_id = "({}) ".format(self.id)
+        str_x_y = "{}/{} - ".format(self.x, self.y)
+        str_width_height = "{}/{}".format(self.width, self.height)
+
+        return (str_square + str_id + str_x_y + str_width_height)
