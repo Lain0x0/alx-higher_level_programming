@@ -49,3 +49,13 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         self.__y = value
+
+    def valid_int(self, name, value, eax=True):
+        """ Method for valid the value """
+        if (type(value) is not int):
+            raise TypeError("{} must be an integer".format(name))
+        if (eax and value < 0):
+            raise ValueError("{} must be >= 0".format(name))
+        else:
+            if (eax and value <= 0):
+                raise ValueError("{} must be > 0".format(name))
