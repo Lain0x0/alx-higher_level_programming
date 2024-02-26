@@ -77,8 +77,27 @@ class Rectangle(Base):
             self.__y, self.__width, self.__height))
 
     def display(self):
-        """ Prints in stdout the Rectangle instance with the character # """
+        """ printing str "#" in rectangle class. """
         for i in range(self.__y):
             print("")
         for j in range(self.__height):
             print(self.__x * " " + '#' * self.__width)
+
+    def update(self, *args, **kwargs):
+        """ method to assigns an argument to each att """
+        if (args):
+            for arguments in range(len(args)):
+                if (arguments == 0):
+                    self.id = args[arguments]
+                if (arguments == 1):
+                    self.__width = args[arguments]
+                if (arguments == 2):
+                    self.__height = args[arguments]
+                if (arguments == 3):
+                    self.__x = args[arguments]
+                if (arguments == 4):
+                    self.__y = args[arguments]
+
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
