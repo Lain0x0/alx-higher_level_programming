@@ -55,7 +55,7 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """Set/get the x coordinate of the Rectangle."""
+        """Set and get the x coordinate of the Rectangle."""
         return self.__x
 
     @x.setter
@@ -68,7 +68,7 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """Set/get the y coordinate of the Rectangle."""
+        """Set and get the y coordinate of the Rectangle."""
         return self.__y
 
     @y.setter
@@ -80,11 +80,11 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
-        """Return the area of the Rectangle."""
+        """Return area of the Rectangle."""
         return self.width * self.height
 
     def display(self):
-        """Print the Rectangle using the `#` character."""
+        """Print Rectangle using the `#` character."""
         if self.width == 0 or self.height == 0:
             print("")
             return
@@ -96,7 +96,7 @@ class Rectangle(Base):
             print("")
 
     def update(self, *args, **kwargs):
-        """Update the Rectangle.
+        """Updating the Rectangle.
 
         Args:
             *args (ints): New attribute values.
@@ -107,7 +107,7 @@ class Rectangle(Base):
                 - 5th argument represents y attribute
             **kwargs (dict): New key/value pairs of attributes.
         """
-        if args and len(args) != 0:
+        if (args and len(args) != 0):
             a = 0
             for arg in args:
                 if a == 0:
@@ -142,7 +142,7 @@ class Rectangle(Base):
                     self.y = v
 
     def to_dictionary(self):
-        """Return the dictionary representation of a Rectangle."""
+        """Return the dict of a Rectangle."""
         return {
             "id": self.id,
             "width": self.width,
@@ -152,7 +152,7 @@ class Rectangle(Base):
         }
 
     def __str__(self):
-        """Return the print() and str() representation of the Rectangle."""
+        """Return str for rectangle."""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
                                                        self.x, self.y,
                                                        self.width, self.height)
