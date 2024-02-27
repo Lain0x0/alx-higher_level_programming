@@ -17,7 +17,7 @@ class Rectangle(Base):
     @property
     def width(self):
         """ width of rectangle """
-        return (self.__width)
+        return self.__width
 
     @width.setter
     def width(self, value):
@@ -26,7 +26,7 @@ class Rectangle(Base):
     @property
     def height(self):
         """ height of rectangle """
-        return (self.__height)
+        return self.__height
 
     @height.setter
     def height(self, value):
@@ -35,7 +35,7 @@ class Rectangle(Base):
     @property
     def x(self):
         """ x of rectangle """
-        return (self.__x)
+        return self.__x
 
     @x.setter
     def x(self, value):
@@ -44,71 +44,69 @@ class Rectangle(Base):
     @property
     def y(self):
         """ y of rectangle """
-        return (self.__y)
+        return self.__y
 
     @y.setter
     def y(self, value):
         self.__y = value
 
     def valid_int(self, name, value, eax=True):
-        """ Method for valid the value """
-        if (type(value) is not int):
+        """ Method for validating the value """
+        if not isinstance(value, int):
             raise TypeError("{} must be an integer".format(name))
-        if (eax and value < 0):
+        if eax and value < 0:
             raise ValueError("{} must be >= 0".format(name))
-        else:
-            if (eax and value <= 0):
-                raise ValueError("{} must be > 0".format(name))
+        elif eax and value <= 0:
+            raise ValueError("{} must be > 0".format(name))
 
     def area(self):
-        """ Calcul the area of rectangle """
-        return (self.width * self.height)
+        """ Calculate the area of rectangle """
+        return self.width * self.height
 
     def display(self):
-        """ Printing string '#' in rectangle  """
-        s = '\n' * self.y + \
-                (' ' * self.x + "#" * self.width + '\n') * self.height
+        """ Print string '#' in rectangle """
+        s = '\n' * self.y + (' ' * self.x + "#" * self.width + '\n')
+        * self.height
         print(s, end='')
 
     def __str__(self):
-        """ It returns [Rectangle] (<id>) <x>/<y> - <width>/<height> """
-        return ("[{}] ({}) {:d}/{:d} - {:d}/{:d}".format(
-            self.__class__.__name__, self.id, self.__x,
-            self.__y, self.__width, self.__height))
+        """ Return string representation of Rectangle """
+        return "[{}] ({}) {:d}/{:d} - {:d}/{:d}".format(
+            self.__class__.__name__, self.id, self.x,
+            self.y, self.width, self.height)
 
     def display(self):
-        """ printing str "#" in rectangle class. """
-        for i in range(self.__y):
+        """ Print string '#' in rectangle class """
+        for _ in range(self.y):
             print("")
-        for j in range(self.__height):
-            print(self.__x * " " + '#' * self.__width)
+        for _ in range(self.height):
+            print(self.x * " " + '#' * self.width)
 
     def update(self, *args, **kwargs):
-        """ method to assigns an argument to each att """
+        """ Method to assign
+        arguments to each attribute """
         if (args):
-            for arguments in range(len(args)):
-                if (arguments == 0):
-                    self.id = args[arguments]
-                if (arguments == 1):
-                    self.__width = args[arguments]
-                if (arguments == 2):
-                    self.__height = args[arguments]
-                if (arguments == 3):
-                    self.__x = args[arguments]
-                if (arguments == 4):
-                    self.__y = args[arguments]
-
+            for i, arg in enumerate(args):
+                if i == 0:
+                    self.id = arg
+                elif i == 1:
+                    self.width = arg
+                elif i == 2:
+                    self.height = arg
+                elif i == 3:
+                    self.x = arg
+                elif i == 4:
+                    self.y = arg
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
 
     def to_dictionary(self):
-        """Return the dictionary
-        representation of a Rectangle."""
+        """ Return the dictionary representation of a Rectangle """
         return {
-                'id': self.id,
-                'width': self.width,
-                'height': self.height,
-                'x': self.x,
-                'y': self.y
-                }
+            'id': self.id,
+            'width': self.width,
+            'height': self.height,
+            'x': self.x,
+            'y': self.y
+        }
