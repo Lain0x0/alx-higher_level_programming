@@ -67,7 +67,7 @@ class Rectangle(Base):
     def display(self):
         """ Printing string '#' in rectangle  """
         s = '\n' * self.y + \
-            (' ' * self.x + "#" * self.width + '\n') * self.height
+                (' ' * self.x + "#" * self.width + '\n') * self.height
         print(s, end='')
 
     def __str__(self):
@@ -103,10 +103,12 @@ class Rectangle(Base):
                 setattr(self, key, value)
 
     def to_dictionary(self):
+        """Return the dictionary
+        representation of a Rectangle."""
         return {
-            'id': self.id,
-            'width': self.width,
-            'height': self.height,
-            'x': self.x,
-            'y': self.y
-        }
+                'id': self.id,
+                'width': self.width,
+                'height': self.height,
+                'x': self.x,
+                'y': self.y
+                }
