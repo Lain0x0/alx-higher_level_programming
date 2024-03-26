@@ -1,0 +1,2 @@
+-- Using DELETE in SQL:
+DELETE DATABASE IF NOT EXISTS hbtn_0c_0;
