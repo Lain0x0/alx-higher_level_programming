@@ -1,19 +1,20 @@
--- Import the database dump from DB 2.0 with SQL:
+-- Importing database to dump from DB 2.0 with SQL:
 SELECT `name`, SUM(`rate`) AS `rating`
-  FROM `tv_genres` AS gen
-       INNER JOIN `tv_show_genres` AS ser
-       ON ser.`genre_id` = gen.`id`
+  FROM `tv_genres` AS g
+       INNER JOIN `tv_show_genres` AS s
+       ON s.`genre_id` = g.`id`
 
-       INNER JOIN `tv_show_ratings` AS rat
-       ON rat.`show_id` = ser.`show_id`
+       INNER JOIN `tv_show_ratings` AS r
+       ON r.`show_id` = s.`show_id`
  GROUP BY `name`
- ORDER BY `rating` DESC;-- Lists all genres in the database:
+ ORDER BY `rating` DESC;-- Lists all genres in the database hbtn_0d_tvshows_rate by their rating.
+-- Records are ordered by desec rating.
 SELECT `name`, SUM(`rate`) AS `rating`
-  FROM `tv_genres` AS gen
-       INNER JOIN `tv_show_genres` AS ser
-       ON ser.`genre_id` = gen.`id`
+  FROM `tv_genres` AS g
+       INNER JOIN `tv_show_genres` AS s
+       ON s.`genre_id` = g.`id`
 
-       INNER JOIN `tv_show_ratings` AS rat
-       ON rat.`show_id` = ser.`show_id`
+       INNER JOIN `tv_show_ratings` AS r
+       ON r.`show_id` = s.`show_id`
  GROUP BY `name`
  ORDER BY `rating` DESC;
