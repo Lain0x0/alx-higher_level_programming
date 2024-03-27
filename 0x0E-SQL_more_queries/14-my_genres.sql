@@ -6,5 +6,5 @@ SELECT gen.`name`
 
        INNER JOIN `tv_shows` AS tv_s
        ON tv_s.`id` = ser.`show_id`
-       WHERE tv_S.`title` = "Dexter"
+       WHERE tv_s.`title` = "Dexter"
  ORDER BY gen.`name`;
