@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-const args = process.argvp[2];
+const args = process.argv[2];
 
 function factorial (n) {
   if (n < 0) {
