@@ -2,7 +2,7 @@
 
 """Listing all states with name start with N% """
 
-if __name__:"__main__":
+if __name__ == "__main__":
 
     import MySQLdb
     import sys
@@ -15,8 +15,10 @@ if __name__:"__main__":
             db=sys.argv[3]
             )
     curs = db.cursor()
-    curs.execute("SELECT * FROM states WHERE name 'N%' ORDER BY states.id ASC;")
+    curs.execute("""
+            SELECT * FROM states WHERE name
+            LIKE BINARY '%N' ORDER BY states.id ASC;""")
+
     rows = curs.fetchall()
     for row in rows:
         print(row)
-
