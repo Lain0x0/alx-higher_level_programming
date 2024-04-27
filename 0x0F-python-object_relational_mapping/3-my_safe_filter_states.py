@@ -11,11 +11,11 @@ if __name__ == "__main__":
                          passwd=sys.argv[2],
                          db=sys.argv[3])
 
-    curs = db.cursor()
+    u = db.cursor()
 
-    curs.execute("SELECT * FROM states WHERE name LIKE %s", (sys.argv[4], ))
-    for row in curs.fetchall():
+    u.execute("SELECT * FROM states WHERE name LIKE %s", (sys.argv[4], ))
+    for row in u.fetchall():
         print(row)
 
-    curs.close()
+    u.close()
     db.close()
