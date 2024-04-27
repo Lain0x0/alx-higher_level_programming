@@ -2,16 +2,15 @@
 
 """Listing all states with name start with N% """
 
+import MySQLdb
+import sys
+
 if __name__ == "__main__":
-
-    import MySQLdb
-    import sys
-
     db = MySQLdb.connect(
             host="localhost",
             port=3306,
             user=sys.argv[1],
-            passwrd=sys.argv[2],
+            passwd=sys.argv[2],
             db=sys.argv[3]
             )
     curs = db.cursor()
