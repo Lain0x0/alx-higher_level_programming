@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """ Program that gets all states sorted
-in ascending ordered by states id"""
+in ascending ordered by states id """
+import MySQLdb
+import sys
 
 
 if __name__ == "__main__":
-    import MySQLdb
-    import sys
 
     db = MySQLdb.connect(
             host="localhost",
@@ -16,10 +16,10 @@ if __name__ == "__main__":
             )
 
     curs = db.cursor()
-    curs.execute("SELECT * FROM states ORDER BY states.id ASC")
-    rows = curs.fetchall()
+    curs.execute("SELECT * FROM states ORDER BY id ASC")
 
-    for row in rows:
+    for row in curs.fetchall():
         print(row)
+
     curs.close()
     db.close()
