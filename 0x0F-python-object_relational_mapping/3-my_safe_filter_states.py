@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" """
+"""This is a comment """
 import MySQLdb
 import sys
 
