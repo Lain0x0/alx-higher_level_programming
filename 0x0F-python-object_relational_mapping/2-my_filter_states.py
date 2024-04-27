@@ -15,7 +15,7 @@ if __name__ == "__main__":
 
     curs = db.cursor()
     curs.execute("SELECT * FROM states WHERE BINARY name='{:s}'\
-                    ORDER BY id ASC".format(sys.argv[4]))
+                ORDER BY id ASC".format(sys.argv[4]))
 
     rows = curs.fetchall()
     for row in rows:
