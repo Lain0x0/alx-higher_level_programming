@@ -2,8 +2,8 @@
 """ Program that gets all states sorted
 in ascending ordered by states id"""
 
-if __name__ == "__main__":
 
+if __name__ == "__main__":
     import MySQLdb
     import sys
 
