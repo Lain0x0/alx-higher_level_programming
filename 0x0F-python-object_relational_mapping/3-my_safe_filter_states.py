@@ -10,8 +10,9 @@ if __name__ == "__main__":
                          user=sys.argv[1],
                          passwd=sys.argv[2],
                          db=sys.argv[3])
+
     curs = db.cursor()
-    curs.execute("SELECT * FROM `states`")
+    curs.execute("SELECT * FROM states WHERE name LIKE %s", (sys.argv[4]))
 
     rows = curs.fetchall()
 
