@@ -13,9 +13,7 @@ if __name__ == "__main__":
 
     u = db.cursor()
     u.execute("SELECT * FROM states WHERE name LIKE %s", (sys.argv[4], ))
-    x = u.fetchall()
-    for row in x:
-        print(row)
+    [print(x) for x in u.fetchall()]
 
     u.close()
     db.close()
