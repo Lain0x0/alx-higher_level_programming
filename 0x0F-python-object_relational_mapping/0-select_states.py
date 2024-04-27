@@ -1,13 +1,11 @@
 #!/usr/bin/env python3
-
 """ Program that gets all states sorted
 in ascending ordered by states id"""
+import MySQLdb
+import sys
+
 
 if __name__ == "__main__":
-
-    import MySQLdb
-    import sys
-
     db = MySQLdb.connect(host="localhost",
                          port=3306,
                          user=sys.argv[1],
