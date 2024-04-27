@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-
 """ Program that gets all states sorted
 in ascending ordered by states id"""
 
@@ -22,3 +21,5 @@ if __name__ == "__main__":
 
     for row in rows:
         print(row)
+    curs.close()
+    db.close()
