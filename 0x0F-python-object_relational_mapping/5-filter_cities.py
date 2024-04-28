@@ -18,7 +18,7 @@ if __name__ == "__main__":
                     ORDER BY cities.id ASC".format(sys.argv[4]))
 
     li = []
-    for i in c.fetchall():
+    for i in curs.fetchall():
         li.append(i[0])
 
     print(", ".join(li))
