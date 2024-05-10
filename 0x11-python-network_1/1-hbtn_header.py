@@ -2,10 +2,9 @@
 """ Using urllib and sys to send a REQUEST to URL
 and display the value of the X-Request-Id """
 from urllib import request
-from sys import argv
-
+import sys
 
 if __name__ == "__main__":
-    with request.urlopen(argv[1]) as url_req:
-        data = url_req.headers.get("X-Rrquest-Id")
-        print(data)
+    with request.urlopen(sys.argv[1]) as response:
+        x_request_id = response.headers.get('X-Request-Id')
+        print(x_request_id)
